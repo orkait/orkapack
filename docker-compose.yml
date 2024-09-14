@@ -5,6 +5,7 @@ services:
         container_name: verdaccio
         ports:
             - "4873:4873"
+            - "80:80"
         volumes:
             - ./storage:/verdaccio/storage
             - ./conf:/verdaccio/conf
