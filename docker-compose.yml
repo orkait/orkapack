@@ -1,0 +1,17 @@
+version: "3"
+services:
+  verdaccio:
+    build: .
+    container_name: verdaccio
+    ports:
+      - "4873:4873"
+    volumes:
+      - ./storage:/verdaccio/storage
+      - ./config.yaml:/verdaccio/conf/config.yaml
+      - ./htpasswd:/verdaccio/conf/htpasswd
+    networks:
+      - verdaccio_net
+
+networks:
+  verdaccio_net:
+    driver: bridge

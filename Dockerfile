@@ -1,16 +1,16 @@
-# Use the official Verdaccio image
+# Use the official Verdaccio image base
 FROM node:20-alpine
 
-# Install htpasswd
+# Install htpasswd utility
 RUN apk add --no-cache apache2-utils
 
-# Install Verdaccio
+# Install Verdaccio globally
 RUN npm install -g verdaccio
 
 # Create a directory for Verdaccio's configuration
 RUN mkdir -p /verdaccio/conf
 
-# Copy your custom configuration file and htpasswd file into the container
+# Copy the custom configuration file and htpasswd file into the container
 COPY ./config.yaml /verdaccio/conf/config.yaml
 COPY ./htpasswd /verdaccio/conf/htpasswd
 
@@ -21,7 +21,7 @@ RUN chown -R verdaccio:verdaccio /verdaccio
 # Switch to the non-root user
 USER verdaccio
 
-# Expose the port that Verdaccio runs on
+# Expose the port Verdaccio runs on
 EXPOSE 4873
 
 # Run Verdaccio
