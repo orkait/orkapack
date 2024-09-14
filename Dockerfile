@@ -5,5 +5,8 @@ FROM verdaccio/verdaccio:5.0
 COPY ./config.yaml /verdaccio/conf/config.yaml
 COPY ./htpasswd /verdaccio/conf/htpasswd
 
-# Expose the Verdaccio port (default is 4873)
-EXPOSE 4873
+# Expose port 80 instead of 4873
+EXPOSE 80
+
+# Set Verdaccio to listen on port 80
+CMD ["verdaccio", "--listen", "0.0.0.0:80", "--config", "/verdaccio/conf/config.yaml"]
