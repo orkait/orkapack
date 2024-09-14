@@ -1,0 +1,15 @@
+[phases.setup]
+nixpkgs = ["docker"]
+
+[phases.build]
+cmds = [
+    "docker-compose build"
+]
+
+[phases.start]
+cmds = [
+    "docker-compose up"
+]
+
+[variables]
+RAILWAY_ENV = "${RAILWAY_ENV}"
