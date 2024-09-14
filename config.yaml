@@ -1,4 +1,5 @@
-# Configuration file for Verdaccio
+# Bind to all interfaces to allow external access
+listen: 0.0.0.0:80
 
 # Storage
 storage: /verdaccio/storage
@@ -7,6 +8,8 @@ storage: /verdaccio/storage
 auth:
     htpasswd:
         file: /verdaccio/conf/htpasswd
+        # Switch to bcrypt (instead of crypt) for password encryption
+        algorithm: bcrypt
 
 # Uplinks
 uplinks:
@@ -26,6 +29,8 @@ packages:
         delete: $none
         proxy: npmjs
 
-# Logs
-logs:
-    - { type: stdout, format: pretty, level: http }
+# Log (Update deprecated 'logs' to 'log')
+log:
+    type: stdout
+    format: pretty
+    level: http
