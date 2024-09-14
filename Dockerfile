@@ -22,7 +22,7 @@ RUN chown -R verdaccio:verdaccio /verdaccio
 USER verdaccio
 
 # Expose the port that Verdaccio runs on
-EXPOSE 80
+EXPOSE 4873
 
 # Run Verdaccio
 CMD ["verdaccio", "--config", "/verdaccio/conf/config.yaml"]

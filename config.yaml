@@ -1,5 +1,5 @@
 # Bind to all interfaces to allow external access
-listen: 0.0.0.0:80
+listen: 0.0.0.0:4873
 
 # Storage
 storage: /verdaccio/storage
