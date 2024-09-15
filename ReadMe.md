@@ -14,6 +14,13 @@ You can deploy this solution locally or to cloud platforms like [Railway.app](ht
 
 ---
 
+## Registry Deployed on Railway
+
+-  **Registry URL Dev**: [https://orkapack-dev.up.railway.app](https://orkapack-dev.up.railway.app)
+-  **Registry URL Prod**: [https://orkapack-prod.up.railway.app](https://orkapack-prod.up.railway.app)
+
+---
+
 ## Table of Contents
 
 -   [Prerequisites](#prerequisites)
